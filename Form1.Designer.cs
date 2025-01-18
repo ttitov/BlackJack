@@ -1,6 +1,6 @@
 ﻿namespace BlackJack
 {
-    partial class Form1
+    partial class FormBlackJack
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCard1 = new System.Windows.Forms.PictureBox();
+            this.labelPlayer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxCard1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(53, 68);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 266);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxCard1.Location = new System.Drawing.Point(106, 131);
+            this.pictureBoxCard1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBoxCard1.Name = "pictureBoxCard1";
+            this.pictureBoxCard1.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxCard1.TabIndex = 0;
+            this.pictureBoxCard1.TabStop = false;
+            // 
+            // labelPlayer
+            // 
+            this.labelPlayer.AutoSize = true;
+            this.labelPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayer.Location = new System.Drawing.Point(110, 70);
+            this.labelPlayer.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelPlayer.Name = "labelPlayer";
+            this.labelPlayer.Size = new System.Drawing.Size(124, 42);
+            this.labelPlayer.TabIndex = 1;
+            this.labelPlayer.Text = "Player";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 391);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1855, 59);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 42);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Dealer";
             // 
-            // Form1
+            // FormBlackJack
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 599);
+            this.ClientSize = new System.Drawing.Size(2326, 1227);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Controls.Add(this.labelPlayer);
+            this.Controls.Add(this.pictureBoxCard1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Name = "FormBlackJack";
+            this.Text = "Blackjack";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,7 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxCard1;
+        private System.Windows.Forms.Label labelPlayer;
         private System.Windows.Forms.Label label1;
     }
 }
