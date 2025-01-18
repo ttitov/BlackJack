@@ -80,7 +80,7 @@
             // pictureBoxDeck
             // 
             this.pictureBoxDeck.Image = global::BlackJack.Properties.Resources.cover;
-            this.pictureBoxDeck.Location = new System.Drawing.Point(959, 144);
+            this.pictureBoxDeck.Location = new System.Drawing.Point(983, 144);
             this.pictureBoxDeck.Name = "pictureBoxDeck";
             this.pictureBoxDeck.Size = new System.Drawing.Size(352, 507);
             this.pictureBoxDeck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -98,7 +98,7 @@
             // 
             // pictureBoxDealerCard1
             // 
-            this.pictureBoxDealerCard1.Location = new System.Drawing.Point(1402, 144);
+            this.pictureBoxDealerCard1.Location = new System.Drawing.Point(1443, 144);
             this.pictureBoxDealerCard1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxDealerCard1.Name = "pictureBoxDealerCard1";
             this.pictureBoxDealerCard1.Size = new System.Drawing.Size(348, 507);
