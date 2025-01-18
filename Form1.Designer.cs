@@ -31,12 +31,14 @@
             this.pictureBoxCard1 = new System.Windows.Forms.PictureBox();
             this.labelPlayer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxDeck = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxCard1
             // 
-            this.pictureBoxCard1.Location = new System.Drawing.Point(106, 131);
+            this.pictureBoxCard1.Location = new System.Drawing.Point(117, 144);
             this.pictureBoxCard1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBoxCard1.Name = "pictureBoxCard1";
             this.pictureBoxCard1.Size = new System.Drawing.Size(348, 507);
@@ -65,11 +67,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Dealer";
             // 
+            // pictureBoxDeck
+            // 
+            this.pictureBoxDeck.Image = global::BlackJack.Properties.Resources.cover;
+            this.pictureBoxDeck.Location = new System.Drawing.Point(954, 144);
+            this.pictureBoxDeck.Name = "pictureBoxDeck";
+            this.pictureBoxDeck.Size = new System.Drawing.Size(352, 507);
+            this.pictureBoxDeck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDeck.TabIndex = 3;
+            this.pictureBoxDeck.TabStop = false;
+            // 
             // FormBlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2326, 1227);
+            this.Controls.Add(this.pictureBoxDeck);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPlayer);
             this.Controls.Add(this.pictureBoxCard1);
@@ -77,6 +90,7 @@
             this.Name = "FormBlackJack";
             this.Text = "Blackjack";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,6 +101,7 @@
         private System.Windows.Forms.PictureBox pictureBoxCard1;
         private System.Windows.Forms.Label labelPlayer;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBoxDeck;
     }
 }
 
