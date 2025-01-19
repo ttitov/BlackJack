@@ -16,5 +16,15 @@ namespace BlackJack
         {
             InitializeComponent();
         }
+
+        private void buttonStick_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxDeck_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

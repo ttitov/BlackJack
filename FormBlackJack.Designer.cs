@@ -28,32 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxPlayerCard1 = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
             this.labelPlayer = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxDeck = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPlayerCard2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDealerCard1 = new System.Windows.Forms.PictureBox();
             this.labelBet = new System.Windows.Forms.Label();
             this.textBoxBet = new System.Windows.Forms.TextBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.buttonStick = new System.Windows.Forms.Button();
+            this.labelBank = new System.Windows.Forms.Label();
             this.pictureBoxDealerCard2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).BeginInit();
+            this.pictureBoxDealerCard1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPlayerCard2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDeck = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPlayerCard1 = new System.Windows.Forms.PictureBox();
+            this.toolTipDeck = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxPlayerCard1
-            // 
-            this.pictureBoxPlayerCard1.Location = new System.Drawing.Point(117, 144);
-            this.pictureBoxPlayerCard1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.pictureBoxPlayerCard1.Name = "pictureBoxPlayerCard1";
-            this.pictureBoxPlayerCard1.Size = new System.Drawing.Size(348, 507);
-            this.pictureBoxPlayerCard1.TabIndex = 0;
-            this.pictureBoxPlayerCard1.TabStop = false;
             // 
             // labelPlayer
             // 
@@ -70,40 +64,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1855, 59);
+            this.label1.Location = new System.Drawing.Point(1163, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "Dealer";
-            // 
-            // pictureBoxDeck
-            // 
-            this.pictureBoxDeck.Image = global::BlackJack.Properties.Resources.cover;
-            this.pictureBoxDeck.Location = new System.Drawing.Point(983, 144);
-            this.pictureBoxDeck.Name = "pictureBoxDeck";
-            this.pictureBoxDeck.Size = new System.Drawing.Size(352, 507);
-            this.pictureBoxDeck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDeck.TabIndex = 3;
-            this.pictureBoxDeck.TabStop = false;
-            // 
-            // pictureBoxPlayerCard2
-            // 
-            this.pictureBoxPlayerCard2.Location = new System.Drawing.Point(523, 144);
-            this.pictureBoxPlayerCard2.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBoxPlayerCard2.Name = "pictureBoxPlayerCard2";
-            this.pictureBoxPlayerCard2.Size = new System.Drawing.Size(348, 507);
-            this.pictureBoxPlayerCard2.TabIndex = 4;
-            this.pictureBoxPlayerCard2.TabStop = false;
-            // 
-            // pictureBoxDealerCard1
-            // 
-            this.pictureBoxDealerCard1.Location = new System.Drawing.Point(1443, 144);
-            this.pictureBoxDealerCard1.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBoxDealerCard1.Name = "pictureBoxDealerCard1";
-            this.pictureBoxDealerCard1.Size = new System.Drawing.Size(348, 507);
-            this.pictureBoxDealerCard1.TabIndex = 5;
-            this.pictureBoxDealerCard1.TabStop = false;
             // 
             // labelBet
             // 
@@ -141,21 +107,76 @@
             this.buttonStick.TabIndex = 9;
             this.buttonStick.Text = "STICK";
             this.buttonStick.UseVisualStyleBackColor = true;
+            this.buttonStick.Click += new System.EventHandler(this.buttonStick_Click);
+            // 
+            // labelBank
+            // 
+            this.labelBank.AutoSize = true;
+            this.labelBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBank.Location = new System.Drawing.Point(1164, 786);
+            this.labelBank.Name = "labelBank";
+            this.labelBank.Size = new System.Drawing.Size(97, 33);
+            this.labelBank.TabIndex = 11;
+            this.labelBank.Text = "Bank: ";
             // 
             // pictureBoxDealerCard2
             // 
-            this.pictureBoxDealerCard2.Location = new System.Drawing.Point(1843, 144);
+            this.pictureBoxDealerCard2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxDealerCard2.Location = new System.Drawing.Point(1557, 144);
             this.pictureBoxDealerCard2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxDealerCard2.Name = "pictureBoxDealerCard2";
             this.pictureBoxDealerCard2.Size = new System.Drawing.Size(348, 507);
             this.pictureBoxDealerCard2.TabIndex = 10;
             this.pictureBoxDealerCard2.TabStop = false;
             // 
+            // pictureBoxDealerCard1
+            // 
+            this.pictureBoxDealerCard1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxDealerCard1.Location = new System.Drawing.Point(1170, 144);
+            this.pictureBoxDealerCard1.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBoxDealerCard1.Name = "pictureBoxDealerCard1";
+            this.pictureBoxDealerCard1.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxDealerCard1.TabIndex = 5;
+            this.pictureBoxDealerCard1.TabStop = false;
+            // 
+            // pictureBoxPlayerCard2
+            // 
+            this.pictureBoxPlayerCard2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPlayerCard2.Location = new System.Drawing.Point(406, 144);
+            this.pictureBoxPlayerCard2.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBoxPlayerCard2.Name = "pictureBoxPlayerCard2";
+            this.pictureBoxPlayerCard2.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxPlayerCard2.TabIndex = 4;
+            this.pictureBoxPlayerCard2.TabStop = false;
+            // 
+            // pictureBoxDeck
+            // 
+            this.pictureBoxDeck.Image = global::BlackJack.Properties.Resources.cover;
+            this.pictureBoxDeck.Location = new System.Drawing.Point(789, 144);
+            this.pictureBoxDeck.Name = "pictureBoxDeck";
+            this.pictureBoxDeck.Size = new System.Drawing.Size(352, 507);
+            this.pictureBoxDeck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDeck.TabIndex = 3;
+            this.pictureBoxDeck.TabStop = false;
+            this.pictureBoxDeck.Click += new System.EventHandler(this.pictureBoxDeck_Click);
+            // 
+            // pictureBoxPlayerCard1
+            // 
+            this.pictureBoxPlayerCard1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPlayerCard1.Location = new System.Drawing.Point(27, 144);
+            this.pictureBoxPlayerCard1.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBoxPlayerCard1.Name = "pictureBoxPlayerCard1";
+            this.pictureBoxPlayerCard1.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxPlayerCard1.TabIndex = 0;
+            this.pictureBoxPlayerCard1.TabStop = false;
+            // 
             // FormBlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2326, 1227);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1922, 1121);
+            this.Controls.Add(this.labelBank);
             this.Controls.Add(this.pictureBoxDealerCard2);
             this.Controls.Add(this.buttonStick);
             this.Controls.Add(this.labelTotal);
@@ -167,14 +188,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPlayer);
             this.Controls.Add(this.pictureBoxPlayerCard1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormBlackJack";
             this.Text = "Blackjack";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +214,8 @@
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Button buttonStick;
         private System.Windows.Forms.PictureBox pictureBoxDealerCard2;
+        private System.Windows.Forms.Label labelBank;
+        private System.Windows.Forms.ToolTip toolTipDeck;
     }
 }
 
