@@ -19,12 +19,19 @@ namespace BlackJack
 
         private void buttonStick_Click(object sender, EventArgs e)
         {
+            // Pass move to Dealer
 
         }
 
         private void pictureBoxDeck_Click(object sender, EventArgs e)
         {
+            // Take card from the Deck by Player
 
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            // Start the Game
         }
     }
 }

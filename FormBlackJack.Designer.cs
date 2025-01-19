@@ -42,6 +42,7 @@
             this.pictureBoxDeck = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayerCard1 = new System.Windows.Forms.PictureBox();
             this.toolTipDeck = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).BeginInit();
@@ -74,10 +75,10 @@
             // labelBet
             // 
             this.labelBet.AutoSize = true;
-            this.labelBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBet.Location = new System.Drawing.Point(117, 782);
             this.labelBet.Name = "labelBet";
-            this.labelBet.Size = new System.Drawing.Size(58, 33);
+            this.labelBet.Size = new System.Drawing.Size(64, 37);
             this.labelBet.TabIndex = 6;
             this.labelBet.Text = "Bet";
             // 
@@ -101,6 +102,7 @@
             // 
             // buttonStick
             // 
+            this.buttonStick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStick.Location = new System.Drawing.Point(523, 766);
             this.buttonStick.Name = "buttonStick";
             this.buttonStick.Size = new System.Drawing.Size(205, 70);
@@ -112,10 +114,10 @@
             // labelBank
             // 
             this.labelBank.AutoSize = true;
-            this.labelBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBank.Location = new System.Drawing.Point(1164, 786);
             this.labelBank.Name = "labelBank";
-            this.labelBank.Size = new System.Drawing.Size(97, 33);
+            this.labelBank.Size = new System.Drawing.Size(108, 37);
             this.labelBank.TabIndex = 11;
             this.labelBank.Text = "Bank: ";
             // 
@@ -170,12 +172,24 @@
             this.pictureBoxPlayerCard1.TabIndex = 0;
             this.pictureBoxPlayerCard1.TabStop = false;
             // 
+            // buttonStart
+            // 
+            this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStart.Location = new System.Drawing.Point(821, 970);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(301, 79);
+            this.buttonStart.TabIndex = 12;
+            this.buttonStart.Text = "Start Game";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
             // FormBlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1922, 1121);
+            this.ClientSize = new System.Drawing.Size(1927, 1133);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelBank);
             this.Controls.Add(this.pictureBoxDealerCard2);
             this.Controls.Add(this.buttonStick);
@@ -190,6 +204,7 @@
             this.Controls.Add(this.pictureBoxPlayerCard1);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormBlackJack";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blackjack";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).EndInit();
@@ -216,6 +231,7 @@
         private System.Windows.Forms.PictureBox pictureBoxDealerCard2;
         private System.Windows.Forms.Label labelBank;
         private System.Windows.Forms.ToolTip toolTipDeck;
+        private System.Windows.Forms.Button buttonStart;
     }
 }
 
