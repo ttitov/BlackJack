@@ -36,13 +36,13 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.buttonStick = new System.Windows.Forms.Button();
             this.labelBank = new System.Windows.Forms.Label();
+            this.toolTipDeck = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonStart = new System.Windows.Forms.Button();
             this.pictureBoxDealerCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxDealerCard1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayerCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxDeck = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayerCard1 = new System.Windows.Forms.PictureBox();
-            this.toolTipDeck = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).BeginInit();
@@ -121,6 +121,17 @@
             this.labelBank.TabIndex = 11;
             this.labelBank.Text = "Bank: ";
             // 
+            // buttonStart
+            // 
+            this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStart.Location = new System.Drawing.Point(821, 970);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(301, 79);
+            this.buttonStart.TabIndex = 12;
+            this.buttonStart.Text = "Start Game";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
             // pictureBoxDealerCard2
             // 
             this.pictureBoxDealerCard2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -128,6 +139,7 @@
             this.pictureBoxDealerCard2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxDealerCard2.Name = "pictureBoxDealerCard2";
             this.pictureBoxDealerCard2.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxDealerCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDealerCard2.TabIndex = 10;
             this.pictureBoxDealerCard2.TabStop = false;
             // 
@@ -138,6 +150,7 @@
             this.pictureBoxDealerCard1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxDealerCard1.Name = "pictureBoxDealerCard1";
             this.pictureBoxDealerCard1.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxDealerCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDealerCard1.TabIndex = 5;
             this.pictureBoxDealerCard1.TabStop = false;
             // 
@@ -148,6 +161,7 @@
             this.pictureBoxPlayerCard2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxPlayerCard2.Name = "pictureBoxPlayerCard2";
             this.pictureBoxPlayerCard2.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxPlayerCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPlayerCard2.TabIndex = 4;
             this.pictureBoxPlayerCard2.TabStop = false;
             // 
@@ -169,19 +183,9 @@
             this.pictureBoxPlayerCard1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBoxPlayerCard1.Name = "pictureBoxPlayerCard1";
             this.pictureBoxPlayerCard1.Size = new System.Drawing.Size(348, 507);
+            this.pictureBoxPlayerCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPlayerCard1.TabIndex = 0;
             this.pictureBoxPlayerCard1.TabStop = false;
-            // 
-            // buttonStart
-            // 
-            this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(821, 970);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(301, 79);
-            this.buttonStart.TabIndex = 12;
-            this.buttonStart.Text = "Start Game";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // FormBlackJack
             // 
