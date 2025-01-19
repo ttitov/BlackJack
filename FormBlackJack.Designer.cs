@@ -143,13 +143,13 @@
             // buttonStart
             // 
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(873, 1485);
+            this.buttonStart.Location = new System.Drawing.Point(873, 1475);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(300, 80);
             this.buttonStart.TabIndex = 12;
             this.buttonStart.Text = "Start Game";
             this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            this.buttonStart.Click += new System.EventHandler(this.ButtonStart_Click);
             // 
             // pictureBoxDealerCard2
             // 
@@ -314,6 +314,7 @@
             this.buttonDouble.TabIndex = 22;
             this.buttonDouble.Text = "Double-down";
             this.buttonDouble.UseVisualStyleBackColor = true;
+            this.buttonDouble.Click += new System.EventHandler(this.buttonDouble_Click);
             // 
             // buttonSplit
             // 
