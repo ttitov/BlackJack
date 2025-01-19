@@ -86,11 +86,6 @@ namespace BlackJack
             return drawnCard;
         }
 
-        //public int RemainingCards()
-        //{
-        //    return cards.Count;
-        //}
-
         public bool NeedsReshuffle()
         {
             // Reshuffle when less than 20% of cards remain

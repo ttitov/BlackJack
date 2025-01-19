@@ -178,7 +178,7 @@ namespace BlackJack
                     }
 
                     // Check if it's Double-down option 
-                    if (totalPointsPlayer == 22 || totalPointsPlayer == 18 || totalPointsPlayer == 20)
+                    if (firstCard == secondCard && (totalPointsPlayer == 22 || totalPointsPlayer == 18 || totalPointsPlayer == 20))
                     {
                         buttonDouble.Enabled = true;
                     }
@@ -227,8 +227,7 @@ namespace BlackJack
             //Calculate Bet 
             if (isBlackJack)
             {
-                betAmount = betAmount * 3 / 2;
-                //textBoxBet.Text = "£" + betAmount.ToString();
+                betAmount = betAmount * 3 / 2; // 3-2 rule
                 totalPlayerAmount += betAmount;
                 labelTotalPlayerMoney.Text = "You win: £" + totalPlayerAmount.ToString();
                 //Change Bank amount
@@ -238,8 +237,7 @@ namespace BlackJack
             }
             else if (isPlayerWon)
             {
-                betAmount = betAmount * 2;
-                //textBoxBet.Text = "£" + betAmount.ToString();
+                //betAmount = betAmount * 2; // evens rule
                 totalPlayerAmount += betAmount;
                 labelTotalPlayerMoney.Text = "You win: £" + totalPlayerAmount.ToString();
                 //Change Bank amount
@@ -252,10 +250,8 @@ namespace BlackJack
                 //no changes in any money 
 
             }
-            else
+            else if (!isPlayerWon && !isBlackJack && !isDraw)
             {
-                //labelBank.Text = "Bank: £" + betAmount.ToString();
-
                 // Dealer wins, change players money
                 totalPlayerAmount -= betAmount;
                 labelTotalPlayerMoney.Text = "You win: £" + totalPlayerAmount.ToString();
@@ -289,9 +285,6 @@ namespace BlackJack
                 isBlackJack = false; 
                 isPlayerWon = false;
                 CalculateBet();
-                //textBoxBet.Enabled = false;
-                //totalBankAmount += betAmount;
-                //labelBank.Text = "Bank: £" + totalBankAmount.ToString();
             }
             else if (totalPointsPlayer == totalPointsDealer)
             {
@@ -310,8 +303,6 @@ namespace BlackJack
                 isDraw = false;
                 CalculateBet();
 
-                //totalBankAmount += betAmount;
-                //labelBank.Text = "Bank: £" + totalBankAmount.ToString();
             }
 
 
