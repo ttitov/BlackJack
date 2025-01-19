@@ -10,12 +10,33 @@ namespace BlackJack
     {
         private List<Card> cards;
         private Random random;
+        public const int NUMBER_OF_DECKS = 6; // Six decks as a standard in UK
+        public const int CARDS_IN_SINGLE_DECK = 52;
 
         public Deck()
         {
             cards = new List<Card>();
             random = new Random();
-            InitializeDeck();
+            InitializeMultipleDecks();
+        }
+
+        private void InitializeMultipleDecks()
+        {
+            // Create 6 decks
+            for (int deckNumber = 0; deckNumber < NUMBER_OF_DECKS; deckNumber++)
+            {
+                foreach (Card.Suit suit in Enum.GetValues(typeof(Card.Suit)))
+                {
+                    foreach (Card.Rank rank in Enum.GetValues(typeof(Card.Rank)))
+                    {
+                        string rankStr = RankToString(rank);
+                        string suitStr = suit.ToString().ToLower();
+                        string resourceName = $"{rankStr}_of_{suitStr}";
+                        cards.Add(new Card(suit, rank, resourceName));
+                    }
+                }
+            }
+            Shuffle();
         }
 
         private string RankToString(Card.Rank rank)
@@ -39,21 +60,7 @@ namespace BlackJack
             }
         }
 
-        private void InitializeDeck()
-        {
-            foreach (Card.Suit suit in Enum.GetValues(typeof(Card.Suit)))
-            {
-                foreach (Card.Rank rank in Enum.GetValues(typeof(Card.Rank)))
-                {
-                    string rankStr = RankToString(rank);
-                    string suitStr = suit.ToString().ToLower();
-                    string imagePath = $"{rankStr}_of_{suitStr}";  // This will create "4_of_hearts" format
-                    cards.Add(new Card(suit, rank, imagePath));
-                }
-            }
-            Shuffle();
-        }
-
+        //The Fisher-Yates shuffle algorithm
         public void Shuffle()
         {
             int n = cards.Count;
@@ -71,7 +78,7 @@ namespace BlackJack
         {
             if (cards.Count == 0)
             {
-                throw new InvalidOperationException("No cards left in the deck!");
+                throw new InvalidOperationException("No cards left in deck!");
             }
 
             Card drawnCard = cards[0];
@@ -79,9 +86,15 @@ namespace BlackJack
             return drawnCard;
         }
 
-        public int RemainingCards()
+        //public int RemainingCards()
+        //{
+        //    return cards.Count;
+        //}
+
+        public bool NeedsReshuffle()
         {
-            return cards.Count;
+            // Reshuffle when less than 20% of cards remain
+            return cards.Count < (NUMBER_OF_DECKS * CARDS_IN_SINGLE_DECK * 0.2);
         }
     }
 }

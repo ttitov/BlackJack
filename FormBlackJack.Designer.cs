@@ -53,7 +53,7 @@
             this.pictureBoxPlayerCard5 = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayerCard6 = new System.Windows.Forms.PictureBox();
             this.buttonDouble = new System.Windows.Forms.Button();
-            this.buttonSplit = new System.Windows.Forms.Button();
+            this.labelTotalPlayerMoney = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).BeginInit();
@@ -95,7 +95,7 @@
             // 
             this.labelBet.AutoSize = true;
             this.labelBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBet.Location = new System.Drawing.Point(82, 1186);
+            this.labelBet.Location = new System.Drawing.Point(82, 1192);
             this.labelBet.Name = "labelBet";
             this.labelBet.Size = new System.Drawing.Size(64, 37);
             this.labelBet.TabIndex = 6;
@@ -104,7 +104,7 @@
             // textBoxBet
             // 
             this.textBoxBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBet.Location = new System.Drawing.Point(210, 1183);
+            this.textBoxBet.Location = new System.Drawing.Point(212, 1189);
             this.textBoxBet.Name = "textBoxBet";
             this.textBoxBet.Size = new System.Drawing.Size(100, 40);
             this.textBoxBet.TabIndex = 7;
@@ -122,7 +122,7 @@
             // buttonStick
             // 
             this.buttonStick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStick.Location = new System.Drawing.Point(65, 1485);
+            this.buttonStick.Location = new System.Drawing.Point(433, 1343);
             this.buttonStick.Name = "buttonStick";
             this.buttonStick.Size = new System.Drawing.Size(205, 70);
             this.buttonStick.TabIndex = 9;
@@ -143,7 +143,7 @@
             // buttonStart
             // 
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStart.Location = new System.Drawing.Point(873, 1475);
+            this.buttonStart.Location = new System.Drawing.Point(873, 1343);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(300, 80);
             this.buttonStart.TabIndex = 12;
@@ -308,7 +308,7 @@
             // 
             this.buttonDouble.Enabled = false;
             this.buttonDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDouble.Location = new System.Drawing.Point(315, 1385);
+            this.buttonDouble.Location = new System.Drawing.Point(89, 1343);
             this.buttonDouble.Name = "buttonDouble";
             this.buttonDouble.Size = new System.Drawing.Size(270, 70);
             this.buttonDouble.TabIndex = 22;
@@ -316,24 +316,23 @@
             this.buttonDouble.UseVisualStyleBackColor = true;
             this.buttonDouble.Click += new System.EventHandler(this.buttonDouble_Click);
             // 
-            // buttonSplit
+            // labelTotalPlayerMoney
             // 
-            this.buttonSplit.Enabled = false;
-            this.buttonSplit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSplit.Location = new System.Drawing.Point(65, 1385);
-            this.buttonSplit.Name = "buttonSplit";
-            this.buttonSplit.Size = new System.Drawing.Size(205, 70);
-            this.buttonSplit.TabIndex = 23;
-            this.buttonSplit.Text = "Split";
-            this.buttonSplit.UseVisualStyleBackColor = true;
+            this.labelTotalPlayerMoney.AutoSize = true;
+            this.labelTotalPlayerMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPlayerMoney.Location = new System.Drawing.Point(379, 1190);
+            this.labelTotalPlayerMoney.Name = "labelTotalPlayerMoney";
+            this.labelTotalPlayerMoney.Size = new System.Drawing.Size(150, 37);
+            this.labelTotalPlayerMoney.TabIndex = 24;
+            this.labelTotalPlayerMoney.Text = "You win: ";
             // 
             // FormBlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2027, 1628);
-            this.Controls.Add(this.buttonSplit);
+            this.ClientSize = new System.Drawing.Size(2013, 1479);
+            this.Controls.Add(this.labelTotalPlayerMoney);
             this.Controls.Add(this.buttonDouble);
             this.Controls.Add(this.pictureBoxPlayerCard6);
             this.Controls.Add(this.pictureBoxPlayerCard5);
@@ -405,7 +404,7 @@
         private System.Windows.Forms.PictureBox pictureBoxPlayerCard5;
         private System.Windows.Forms.PictureBox pictureBoxPlayerCard6;
         private System.Windows.Forms.Button buttonDouble;
-        private System.Windows.Forms.Button buttonSplit;
+        private System.Windows.Forms.Label labelTotalPlayerMoney;
     }
 }
 

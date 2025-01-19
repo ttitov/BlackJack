@@ -18,6 +18,7 @@ namespace BlackJack
 
         private double betAmount;
         private double totalBankAmount = 0; //total money in the Bank
+        private double totalPlayerAmount = 0;
 
         private bool isPlayerWon, isBlackJack;
         private bool isDraw = false;
@@ -28,6 +29,7 @@ namespace BlackJack
 
         private List<PictureBox> playerPictureBoxes;
         private int playerCardIndex;
+
 
         public FormBlackJack()
         {
@@ -69,6 +71,9 @@ namespace BlackJack
 
         private void pictureBoxDeck_Click(object sender, EventArgs e)
         {
+            // Disable double-down button 
+            buttonDouble.Enabled = false; 
+
             // Take card from the Deck by Player
             if (totalPointsPlayer < 21 && playerCardIndex < playerPictureBoxes.Count)
             {
@@ -107,7 +112,7 @@ namespace BlackJack
 
                     if (isDoubleDown) 
                     {
-                        CheckWinner(); // the last move for player 
+                        DealerPlayCards(); // the last move for player, then the move passed to dealer 
                     }
                 } 
                 catch 
@@ -134,7 +139,12 @@ namespace BlackJack
                 
                 try
                 {
-                    deck = new Deck();
+                    //Check if the deck need shuffle
+                    if (deck.NeedsReshuffle())
+                    {
+                        deck.Shuffle();
+                    }
+
                     // Draw a random card from deck
                     Card firstCard = deck.DrawCard();
 
@@ -167,10 +177,11 @@ namespace BlackJack
                         CheckWinner(); 
                     }
 
-                    //TBD Check if it's Double-down option 
-                    //if (totalPointsPlayer == 22 || totalPointsPlayer == 18 || totalPointsPlayer == 20) {
-                    //    buttonDouble.Enabled = true;
-                    //}
+                    // Check if it's Double-down option 
+                    if (totalPointsPlayer == 22 || totalPointsPlayer == 18 || totalPointsPlayer == 20)
+                    {
+                        buttonDouble.Enabled = true;
+                    }
 
                     pictureBoxDeck.Enabled = true; // you can make moves 
                     textBoxBet.Enabled = false; // Player can't change bet after game started
@@ -217,52 +228,70 @@ namespace BlackJack
             if (isBlackJack)
             {
                 betAmount = betAmount * 3 / 2;
-                textBoxBet.Text = "£" + betAmount.ToString();
+                //textBoxBet.Text = "£" + betAmount.ToString();
+                totalPlayerAmount += betAmount;
+                labelTotalPlayerMoney.Text = "You win: £" + totalPlayerAmount.ToString();
+                //Change Bank amount
+                totalBankAmount -= betAmount;
+                labelBank.Text = "Bank: £" + totalBankAmount.ToString();
                 textBoxBet.Enabled = false;
             }
             else if (isPlayerWon)
             {
                 betAmount = betAmount * 2;
-                textBoxBet.Text = "£" + betAmount.ToString();
+                //textBoxBet.Text = "£" + betAmount.ToString();
+                totalPlayerAmount += betAmount;
+                labelTotalPlayerMoney.Text = "You win: £" + totalPlayerAmount.ToString();
+                //Change Bank amount
+                totalBankAmount -= betAmount;
+                labelBank.Text = "Bank: £" + totalBankAmount.ToString();
+
                 textBoxBet.Enabled = false;
             }
-            else {
-                labelBank.Text = "Bank: £" + betAmount.ToString();
+            else if (isDraw) {
+                //no changes in any money 
+
+            }
+            else
+            {
+                //labelBank.Text = "Bank: £" + betAmount.ToString();
+
+                // Dealer wins, change players money
+                totalPlayerAmount -= betAmount;
+                labelTotalPlayerMoney.Text = "You win: £" + totalPlayerAmount.ToString();
+                // Change bank
+                totalBankAmount += betAmount;
+                labelBank.Text = "Bank: £" + totalBankAmount.ToString();
             }
         }
 
         private void CheckWinner() 
         {
             //Check if anyone has 21 points or check on draw or check who has more point but less than 21
-
             if (totalPointsPlayer == 21)
             {
-                CalculateBet();
                 MessageBox.Show("Player WON!!! Blackjack!");
-                totalBankAmount -= betAmount; 
                 isBlackJack = true;
                 isPlayerWon = true;
-                labelBank.Text = "Bank: £" + totalBankAmount.ToString();
+                CalculateBet();
+
             }
             else if ((totalPointsPlayer > totalPointsDealer && totalPointsPlayer <= 21) || totalPointsDealer > 21)
             {
-                CalculateBet();
                 MessageBox.Show("Player WON!!!");
                 isBlackJack = false;
                 isPlayerWon = true;
-                totalBankAmount -= betAmount;
-                labelBank.Text = "Bank: £" + totalBankAmount.ToString();
+                CalculateBet();
             }
             else if (totalPointsDealer == 21 || totalPointsPlayer > 21) 
             {
-                CalculateBet();
                 MessageBox.Show("You lose.");
                 isBlackJack = false; 
                 isPlayerWon = false;
-                textBoxBet.Text = "0";
-                textBoxBet.Enabled = false;
-                totalBankAmount += betAmount;
-                labelBank.Text = "Bank: £" + totalBankAmount.ToString();
+                CalculateBet();
+                //textBoxBet.Enabled = false;
+                //totalBankAmount += betAmount;
+                //labelBank.Text = "Bank: £" + totalBankAmount.ToString();
             }
             else if (totalPointsPlayer == totalPointsDealer)
             {
@@ -270,22 +299,25 @@ namespace BlackJack
                 isBlackJack = false;
                 isPlayerWon = false;
                 isDraw = true;
+
             }
             else if (totalPointsDealer > totalPointsPlayer && totalPointsDealer <= 21)
             {
-                CalculateBet();
+                
                 MessageBox.Show("You lose. Dealer won");
                 isBlackJack = false;
                 isPlayerWon = false;
                 isDraw = false;
-                textBoxBet.Text = "0";
-                textBoxBet.Enabled = false;
-                totalBankAmount += betAmount;
-                labelBank.Text = "Bank: £" + totalBankAmount.ToString();
+                CalculateBet();
+
+                //totalBankAmount += betAmount;
+                //labelBank.Text = "Bank: £" + totalBankAmount.ToString();
             }
 
 
             // End game logic - can't click on the deck and you can start with bet 
+            textBoxBet.Text = "0";
+
             pictureBoxDeck.Enabled = false;
             textBoxBet.Enabled = true;
             buttonStick.Enabled = false;
@@ -360,9 +392,12 @@ namespace BlackJack
            
         }
 
+        // Double the bet by clicing double-down
         private void buttonDouble_Click(object sender, EventArgs e)
         {
-
+            betAmount *= 2;
+            textBoxBet.Text = betAmount.ToString();
+            isDoubleDown = true;
         }
 
         private void ResetGame()
@@ -400,7 +435,6 @@ namespace BlackJack
             //textBoxBet.Text = "";
 
             // Enable/disable buttons
-            buttonSplit.Enabled = false;
             buttonDouble.Enabled = false;
             buttonStick.Enabled = true;
         }
