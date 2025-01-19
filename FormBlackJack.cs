@@ -32,6 +32,7 @@ namespace BlackJack
         private void buttonStart_Click(object sender, EventArgs e)
         {
             // Start the Game
+            if ()
         }
     }
 }

@@ -415,7 +415,7 @@ namespace BlackJack.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _9_of_spades {
             get {
-                object obj = ResourceManager.GetObject("_9_of_spades", resourceCulture);
+                object obj = ResourceManager.GetObject("9_of_spades", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -473,9 +473,9 @@ namespace BlackJack.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap jack_of_clubs2 {
+        internal static System.Drawing.Bitmap jack_of_clubs {
             get {
-                object obj = ResourceManager.GetObject("jack_of_clubs2", resourceCulture);
+                object obj = ResourceManager.GetObject("jack_of_clubs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -18,7 +18,7 @@ namespace BlackJack
 
         public enum Rank
         {
-            Ace = 1, //Could have value 11 as well
+            Ace = 1, // Could have value 11 as well
             Two = 2,
             Three = 3,
             Four = 4,
@@ -28,9 +28,9 @@ namespace BlackJack
             Eight = 8,
             Nine = 9,
             Ten = 10,
-            Jack = 10,
-            Queen = 10,
-            King = 10
+            Jack = 11, // value 10
+            Queen = 12, // value 10
+            King = 13 // value 10
         }
 
         public Suit CardSuit { get; private set; }
