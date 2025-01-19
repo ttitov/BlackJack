@@ -13,12 +13,13 @@ namespace BlackJack
     public partial class FormBlackJack : Form
     {
         private Deck deck;
-        private int totalPointsPlayer;
-        private int totalPointsDealer;
+        private int totalPointsPlayer, totalPointsDealer;
+
         private double betAmount;
-        private bool isPlayerWon;
-        private bool isBlackJack;
+
+        private bool isPlayerWon, isBlackJack;
         private bool isDraw = false;
+
         public FormBlackJack()
         {
             InitializeComponent();
@@ -69,7 +70,7 @@ namespace BlackJack
 
                     // Put one card for Dealer 
                     Card thirdCard = deck.DrawCard();
-                    pictureBoxDealerCard1.Image = Properties.Resources.ResourceManager.GetObject(thirdCard.ImagePath) as System.Drawing.Bitmap;
+                    pictureBoxDealerCard2.Image = Properties.Resources.ResourceManager.GetObject(thirdCard.ImagePath) as System.Drawing.Bitmap;
                     totalPointsDealer = calculatePoints(thirdCard);
                     labelTotalPointsDealer.Text = "Total Points Dealer: " + totalPointsDealer.ToString();
 
@@ -168,6 +169,36 @@ namespace BlackJack
                 isDraw = false;
             }
 
+        }
+
+        private void DealerPlayCards()
+        {
+
+            while (totalPointsDealer < 17)
+            try
+            {
+                // Dealer first card mode
+                Card firstCard = deck.DrawCard();
+                pictureBoxDealerCard1.Image = Properties.Resources.ResourceManager.GetObject(firstCard.ImagePath) as System.Drawing.Bitmap;
+                int firstCardValue = calculatePoints(firstCard);
+
+
+                // Dealer second card move
+                Card secondCard = deck.DrawCard();
+                pictureBoxDealerCard2.Image = Properties.Resources.ResourceManager.GetObject(secondCard.ImagePath) as System.Drawing.Bitmap;
+                int secondCardValue = calculatePoints(secondCard);
+
+                // Calculate total
+                int totalValue = firstCardValue + secondCardValue;
+
+                // You can display or use the values
+                // For example:
+                // labelTotal.Text = "Total: " + totalValue.ToString();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("Not enough cards in deck!");
+            }
         }
     }
 }
