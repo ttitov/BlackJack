@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelBet = new System.Windows.Forms.Label();
             this.textBoxBet = new System.Windows.Forms.TextBox();
-            this.labelTotal = new System.Windows.Forms.Label();
+            this.labelTotalPlayerPoints = new System.Windows.Forms.Label();
             this.buttonStick = new System.Windows.Forms.Button();
             this.labelBank = new System.Windows.Forms.Label();
             this.toolTipDeck = new System.Windows.Forms.ToolTip(this.components);
@@ -43,6 +43,7 @@
             this.pictureBoxPlayerCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxDeck = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlayerCard1 = new System.Windows.Forms.PictureBox();
+            this.labelTotalPointsDealer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDealerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayerCard2)).BeginInit();
@@ -54,7 +55,7 @@
             // 
             this.labelPlayer.AutoSize = true;
             this.labelPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayer.Location = new System.Drawing.Point(110, 70);
+            this.labelPlayer.Location = new System.Drawing.Point(332, 70);
             this.labelPlayer.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelPlayer.Name = "labelPlayer";
             this.labelPlayer.Size = new System.Drawing.Size(124, 42);
@@ -65,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1163, 70);
+            this.label1.Location = new System.Drawing.Point(1485, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 42);
@@ -85,20 +86,20 @@
             // textBoxBet
             // 
             this.textBoxBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBet.Location = new System.Drawing.Point(211, 779);
+            this.textBoxBet.Location = new System.Drawing.Point(245, 779);
             this.textBoxBet.Name = "textBoxBet";
             this.textBoxBet.Size = new System.Drawing.Size(100, 40);
             this.textBoxBet.TabIndex = 7;
             // 
-            // labelTotal
+            // labelTotalPlayerPoints
             // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(117, 861);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(107, 37);
-            this.labelTotal.TabIndex = 8;
-            this.labelTotal.Text = "Total: ";
+            this.labelTotalPlayerPoints.AutoSize = true;
+            this.labelTotalPlayerPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPlayerPoints.Location = new System.Drawing.Point(117, 861);
+            this.labelTotalPlayerPoints.Name = "labelTotalPlayerPoints";
+            this.labelTotalPlayerPoints.Size = new System.Drawing.Size(205, 37);
+            this.labelTotalPlayerPoints.TabIndex = 8;
+            this.labelTotalPlayerPoints.Text = "Total Points: ";
             // 
             // buttonStick
             // 
@@ -187,17 +188,28 @@
             this.pictureBoxPlayerCard1.TabIndex = 0;
             this.pictureBoxPlayerCard1.TabStop = false;
             // 
+            // labelTotalPointsDealer
+            // 
+            this.labelTotalPointsDealer.AutoSize = true;
+            this.labelTotalPointsDealer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPointsDealer.Location = new System.Drawing.Point(1164, 861);
+            this.labelTotalPointsDealer.Name = "labelTotalPointsDealer";
+            this.labelTotalPointsDealer.Size = new System.Drawing.Size(307, 37);
+            this.labelTotalPointsDealer.TabIndex = 13;
+            this.labelTotalPointsDealer.Text = "Total Points Dealer: ";
+            // 
             // FormBlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1927, 1133);
+            this.Controls.Add(this.labelTotalPointsDealer);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelBank);
             this.Controls.Add(this.pictureBoxDealerCard2);
             this.Controls.Add(this.buttonStick);
-            this.Controls.Add(this.labelTotal);
+            this.Controls.Add(this.labelTotalPlayerPoints);
             this.Controls.Add(this.textBoxBet);
             this.Controls.Add(this.labelBet);
             this.Controls.Add(this.pictureBoxDealerCard1);
@@ -230,12 +242,13 @@
         private System.Windows.Forms.PictureBox pictureBoxDealerCard1;
         private System.Windows.Forms.Label labelBet;
         private System.Windows.Forms.TextBox textBoxBet;
-        private System.Windows.Forms.Label labelTotal;
+        private System.Windows.Forms.Label labelTotalPlayerPoints;
         private System.Windows.Forms.Button buttonStick;
         private System.Windows.Forms.PictureBox pictureBoxDealerCard2;
         private System.Windows.Forms.Label labelBank;
         private System.Windows.Forms.ToolTip toolTipDeck;
         private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Label labelTotalPointsDealer;
     }
 }
 
