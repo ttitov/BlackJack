@@ -55,7 +55,6 @@ namespace BlackJack
         }
 
         public void Shuffle()
-        // The Fisher-Yates shuffle algorithm
         {
             int n = cards.Count;
             while (n > 1)
